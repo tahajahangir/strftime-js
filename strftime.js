@@ -15,27 +15,19 @@ function pad (d, n, p) {
 }
 
 var locales = {
+	fa: {
+		A: "یکشنبه دوشنبه سه‌شنبه چهارشنبه پنج‌شنبه جمعه شنبه".split(' '),
+		a: "۱ش ۲ش ۳ش ۴ش ۵ش جمعه شنبه".split(' '),
+		B: 'فروردین اردیبشهت خرداد تیر مرداد شهریور مهر آبان آذر دی بهمن اسفند'.split(' '),
+	},
     en: {
-        A: [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday',
-            'Thursday', 'Friday', 'Saturday'
-        ],
-        a: [
-            "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"
-        ],
-        B: [
-            'January', 'February', 'March', 'April', 'May', 'June', 'July',
-            'August', 'September', 'October', 'November', 'December'
-        ],
-        b:  ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    },
-    ja: {
-        B: [" 1月", " 2月", " 3月", " 4月", " 5月", " 6月", " 7月", " 8月", " 9月", "10月", "11月", "12月"],
-        b: [" 1月", " 2月", " 3月", " 4月", " 5月", " 6月", " 7月", " 8月", " 9月", "10月", "11月", "12月"],
-        A: ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
-        a: ["日", "月", "火", "水", "木", "金", "土"]
+        A: "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' '),
+        a: "Sun Mon Tue Wed Thu Fri Sat".split(' '),
+        B: "January February March April May June July August September October November December".split(' '),
+        b:  "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split(' ')
     }
 };
+locales.fa.b = locales.fa.B;
 
 var formats = {
 		A: function (d, locale) { return locales[locale].A[d.getDay()]; },
