@@ -134,14 +134,11 @@ function strftime(date, fmt, locale) {
     return r;
 }
 
-Date.prototype.strftime = function (fmt, locale) {
-    return strftime(this, fmt, locale);
-};
-
-Date.prototype.strftime.formats = formats;
-Date.prototype.strftime.setDefaultLocale = function (locale) {
+window.strftime = strftime;
+strftime.formats = formats;
+strftime.setDefaultLocale = function (locale) {
     defaultLocale = locale;
 };
-Date.prototype.strftime.locales = locales;
+strftime.locales = locales;
 
 })();
